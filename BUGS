@@ -1,0 +1,11 @@
+  Encryption/Decryption for ECB and CBC modes is currently broken due 
+  to a change in the read and write functions.
+
+  CFB and OFB modes *should* work, but have not been fully tested yet.
+
+  Basically it was all working at a basic level but no error checking 
+  existed. Adding error checking broke a lot of it but it will all 
+  get worked out.
+
+  This also means that a lot of the tests will fail.
+

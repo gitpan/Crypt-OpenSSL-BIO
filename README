@@ -1,0 +1,64 @@
+						    OpenSSL BIO	
+			   			   -------------
+
+OpenSSL BIO is a collection of Perl modules that make use of the 
+openssl libraries to perform encryption and digesting. There are 4 
+modes available to most encryption types. They are: CBC, ECB, CFB 
+and OFB. A separate module is provided for each of these modes. 
+Digests available are: MD2, MDC2, MD5, SHA and SHA1. 
+
+This is VERY Alpha code. There are no known core dumps but some weird 
+quirks seems to exist in special cases. There are some tests for known 
+problems so if the tests pass, most basic functions should work. The 
+tests are no where near complete yet.
+
+Please read the TODO and BUGS files as this version is undergoing 
+significant changes to the code. Adding a lot more/better error 
+checking to prevent core dumps and such.
+
+Currently some of the tests may not work, but everything should still 
+compile, make and install.
+
+
+
+PREREQUISITES
+
+These modules have only been tested with Perl 5.6.1 on Mandrake 
+8.1 using openssl 0.9.6c. They require no other Perl modules 
+to function.
+
+
+INSTALLATION
+
+You install these just like any other Perl modules:
+
+perl Makefile.PL
+make
+make test
+make install
+
+
+DOCUMENTATION
+
+POD style documentation is included in all modules and scripts.  These
+are normally converted to manual pages and installed as part of the
+"make install" process.  You should also be able to use the 'perldoc'
+utility to extract and read documentation from the module files
+directly.
+
+You can also refer to the openssl man pages: BIO_ctrl, BIO_f_base64, 
+BIO_f_buffer, BIO_f_cipher, BIO_find_type, BIO_f_md, BIO_f_null, 
+BIO_new, BIO_push, BIO_read, BIO_s_accept, BIO_s_connect, BIO_s_fd, 
+BIO_s_file, BIO_should_retry, BIO_s_mem, BIO_s_null and BIO_s_socket.
+
+
+SUPPORT
+
+Bug reports and suggestions for improvements can be send to 
+<kellewic@yahoo.com>. Patches are also welcome.
+
+
+COPYRIGHT
+
+Whatever copyright Perl and OpenSSL use.
+

@@ -1,0 +1,18 @@
+TYPEMAP
+Crypt_OpenSSL_BIO	T_PTROBJ_SPEC
+biostr *	T_PTROBJ_SPEC
+
+INPUT
+T_PTROBJ_SPEC
+                if (sv_derived_from($arg, \"${(my $ntt=$ntype)=~s/_/::/g;\$ntt}\")) {
+                        IV tmp = SvIV((SV*)SvRV($arg));
+                $var = ($type) tmp;
+                }
+                else
+               	    croak(\"$var is not of type ${(my $ntt=$ntype)=~s/_/::/g;\$ntt}\")
+
+OUTPUT
+T_PTROBJ_SPEC
+	sv_setref_pv($arg, \"${(my $ntt=$ntype)=~s/_/::/g;\$ntt}\",
+    (void*)$var);
+

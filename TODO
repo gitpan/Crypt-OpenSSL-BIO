@@ -1,0 +1,23 @@
+ BIO_ssl() is not included as of this time. This one is a
+ bit more complex and should probably be added later.
+
+ How to implement next() inline without destroying current BIO?
+ Ex: $bio->next->read() currently destroys $bio??
+
+ Need better checking on all functions that reset self->bio to
+ make sure we have an actual BIO before the reassignment.
+
+ Can't really get the accept/connect BIOs to work properly. Will
+ have to investigate them further.
+
+ Need much better handling of potentially dangerous situations 
+ like the instance of reassigning self->bio.
+
+ Finish the CBC and ECB ciphers. Right now only the first 64 bits 
+ are encrypted/decrypted. Need to encrypt/decrypt 8-byte chunks.
+
+ Write more of the tests.
+
+ If using BIO.pm and you try to flush a CBC/ECB cipher that does 
+ not encrypt in 8-byte chunks, it dies. Might want to add some 
+ error checking for things like this.
